@@ -1,4 +1,4 @@
-# 🤖 Multi-Agent HITL Support System 
+# Multi-Agent HITL Support System 
 [**English**](./README.md) | [繁體中文](./README.zh-TW.md)
 
 > **An enterprise-grade, cross-department AI customer service system built on Multi-Agent architecture and strict Human-in-the-Loop (HITL) mechanisms.**
