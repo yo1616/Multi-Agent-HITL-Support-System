@@ -7,12 +7,12 @@
 ![AI Models](https://img.shields.io/badge/AI_Models-OpenAI_GPT--4o_|_Claude_3.5_Sonnet-green)
 ![Integration](https://img.shields.io/badge/Integration-Telegram_API_|_Gmail_API-0088cc)
 
-## 💡 Background & Core Concept (Why build this?)
+## Background & Core Concept (Why build this?)
 In real-world enterprise scenarios, handling a single customer complaint is often extremely tedious, requiring cross-departmental data retrieval from Sales, Operations (Logistics), and Finance. Relying solely on a single LLM easily leads to risks such as "hallucination," "unauthorized commitments," or "confidential data leaks."
 
 To solve this pain point, this project established a virtual enterprise named "SunLight Home" to test a **Multi-Agent Architecture** combined with a strict **Human-in-the-Loop (Double Approval) Mechanism**. AI handles the tedious cross-departmental "data verification" and "draft writing," while human managers focus on "decision-making" and "approval," achieving an enterprise-grade AI application that balances efficiency and safety.
 
-## 🏗️ System Architecture
+## System Architecture
 The system divides the virtual enterprise into four nodes, where 4 Agents assist 4 human managers in collaboration:
 * **Agent 1 (CEO's Chief of Staff)**: Polls the Gmail inbox, identifies customer intents, breaks down tasks, performs parallel dispatching to departments, and consolidates the final reports.
 * **Agent 2, 3, 4 (Sales / Ops / Finance)**: Uses RAG technology to read isolated Google Sheet databases for each department and generates professional draft responses.
@@ -21,14 +21,14 @@ The system divides the virtual enterprise into four nodes, where 4 Agents assist
 
 ![System Architecture](assets/architecture.png)
 
-## 🎯 Key Features
+## Key Features
 
 ### 1. Strict Human-in-the-Loop (Double Human Approval)
 This system deeply integrates the Telegram API, embedding decision-making into the managers' daily communication app:
 * **1st Defense Line (Department Approval)**: After the department Agent generates a draft, the department manager must click `✅ Approve`, `✏️ Edit`, or `⛔ Reject` in Telegram.
 * **2nd Defense Line (CEO Decision)**: Once approved contents are consolidated into a final draft, the CEO must give final approval in Telegram before the system calls the Gmail API to send it, completely eliminating the risk of rogue AI.
 
-*(Live Demo: From customer email ➡️ CEO Chief of Staff dispatch ➡️ Department AI data retrieval & manager approval)*
+*(Live Demo: From customer email > CEO Chief of Staff dispatch > Department AI data retrieval & manager approval)*
 
 ![Demo Flow](assets/demo_flow.png)
 
@@ -44,7 +44,7 @@ If a department manager fails to review within 1 hour, the system sends an autom
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 This system is serverless, with core logic deployed on Google Apps Script (GAS).
 
@@ -65,7 +65,7 @@ python generate_mock_data.py
 2. Deploy `dept_agent.gs` individually for the three department managers.
 3. Configure the corresponding API Keys (OpenAI, Anthropic), Telegram Bot Tokens, and Web App URLs in the "Script Properties" of GAS to link all nodes.
 
-## 📁 Documentation
+## Documentation
 Our team has written comprehensive implementation guides and design manuals. Please refer to:
 * 🔗 [AI Virtual Enterprise Proposal Presentation (PDF)](docs/AI虛擬企業簡報.pdf)
 * 🔗 [AI Agent Enterprise Team: Architecture Design Manual (PDF)](docs/AI_Agent_企業團隊：部門設計與建置手冊.pdf)
